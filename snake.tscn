@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmu41gl35nhbc"]
+
+[ext_resource type="Script" path="res://SnakeMovement.gd" id="1_nqvke"]
+[ext_resource type="Texture2D" uid="uid://b1xc0yqh17f10" path="res://Art/Snake.png" id="2_320it"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ttmlc"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxq23"]
+size = Vector2(201, 27)
+
+[node name="Snake" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_ttmlc")
+script = ExtResource("1_nqvke")
+speed = 400.0
+
+[node name="GFX" type="Sprite2D" parent="."]
+texture = ExtResource("2_320it")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 7)
+shape = SubResource("RectangleShape2D_jxq23")

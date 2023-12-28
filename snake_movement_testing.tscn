@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwdxkd3lkb33h"]
+
+[ext_resource type="Texture2D" uid="uid://bhl53epaav2se" path="res://Art/WhiteSquare.png" id="1_s3t7j"]
+[ext_resource type="PackedScene" uid="uid://dmu41gl35nhbc" path="res://snake.tscn" id="2_j62r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myoa6"]
+size = Vector2(935, 20)
+
+[node name="SnakeMovementTesting" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(2.64, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_myoa6")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-5.72205e-06, -5.96046e-08)
+scale = Vector2(9.452, 0.182)
+texture = ExtResource("1_s3t7j")
+
+[node name="Snake" parent="." instance=ExtResource("2_j62r4")]
+position = Vector2(-917, -125)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.365, 0.365)
