@@ -1,42 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2vb2xyyosmok"]
+[gd_scene load_steps=8 format=3 uid="uid://d2vb2xyyosmok"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="Texture2D" uid="uid://b2w0s1xaii2sf" path="res://Art/BackgroundSNakeGame.png" id="2_m4il0"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://top_down_snake.tscn" id="3_4jjbe"]
+[ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
+[ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="5_kxtf8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
+friction = 0.2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
 shader_parameter/motion = Vector2(0, -0.3)
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.333, 0.333)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_asdbn")
-offset_left = -2014.0
-offset_top = -1160.0
-offset_right = -1006.0
-offset_bottom = -440.0
-scale = Vector2(3.83245, 3.83245)
-texture = ExtResource("2_m4il0")
-
 [node name="TopDownSnake" parent="." instance=ExtResource("3_4jjbe")]
 position = Vector2(-247, 288)
 mass = 0.6
+physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
 speed = 400
 
 [node name="TopDownSnake2" parent="." instance=ExtResource("3_4jjbe")]
 position = Vector2(-63, 302)
 mass = 0.6
+physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
 speed = 400
 
 [node name="TopDownSnake3" parent="." instance=ExtResource("3_4jjbe")]
 position = Vector2(253, 272)
 mass = 0.6
+physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
 speed = 400
+
+[node name="GameSpeedManager" type="Node" parent="."]
+script = ExtResource("4_o0uxn")
+speed = 300.0
+
+[node name="Hazard" parent="." instance=ExtResource("5_kxtf8")]
+position = Vector2(-1144, -827)
+
+[node name="Hazard2" parent="." instance=ExtResource("5_kxtf8")]
+position = Vector2(-68, -988)
+
+[node name="Hazard3" parent="." instance=ExtResource("5_kxtf8")]
+position = Vector2(423, -820)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+texture_repeat = 2
+material = SubResource("ShaderMaterial_asdbn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2337.0
+offset_top = -1539.0
+offset_right = 2663.0
+offset_bottom = 1461.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m4il0")
+stretch_mode = 1

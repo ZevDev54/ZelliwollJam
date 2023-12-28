@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="ZelliwollJamGame"
-run/main_scene="res://world.tscn"
+run/main_scene="res://ScrollingLevel.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Speedmanager="*res://speedmanager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor]
 
