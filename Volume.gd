@@ -10,9 +10,9 @@ func _ready() -> void:
 	busIndex = AudioServer.get_bus_index(busName)
 	value_changed.connect(_on_value_changed)
 
-func _on_value_changed(value: float) -> void:
+func _on_value_changed(volue: float) -> void:
 
 	AudioServer.set_bus_volume_db(
 		busIndex,
-		linear_to_db(value)
+		linear_to_db(volue)
 	)
