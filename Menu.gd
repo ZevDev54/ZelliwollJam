@@ -1,8 +1,8 @@
-extends Node
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _on_play_press():
 	pass # Replace with function body.
 
 
