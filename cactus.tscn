@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw4n4jsbaudqh"]
+
+[ext_resource type="Texture2D" uid="uid://davg1154dsvj8" path="res://Art/Cactussy.png" id="1_kd2ll"]
+
+[node name="Cactus" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, 99)
+texture = ExtResource("1_kd2ll")

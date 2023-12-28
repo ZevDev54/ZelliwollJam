@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://batqypx3np4ij"]
+
+[ext_resource type="Script" path="res://CacSpawn.gd" id="1_giv6p"]
+
+[node name="Spawn Timer" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="." node_paths=PackedStringArray("spawnNode")]
+wait_time = 1.16
+autostart = true
+script = ExtResource("1_giv6p")
+spawnNode = NodePath("spawnPos")
+
+[node name="spawnPos" type="Node2D" parent="Timer"]
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timer_timeout"]
