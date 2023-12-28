@@ -24,6 +24,6 @@ func _physics_process(delta):
 	var normalized_velocity = velocity_vector.normalized()
 	apply_central_force(normalized_velocity * speed * slowdownMultiplier);
 
-	print(name+slowdownMultiplier);
+	#print(name+slowdownMultiplier);
 
 
