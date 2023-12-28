@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://broywgv0oltk8"]
+
+[ext_resource type="Texture2D" uid="uid://cbuxt3kax7kfn" path="res://Art/SandBlock.png" id="1_rl0vn"]
+[ext_resource type="Texture2D" uid="uid://b1xc0yqh17f10" path="res://Art/Snake.png" id="2_2x2oy"]
+[ext_resource type="Texture2D" uid="uid://dxelpvk5leppg" path="res://Art/Spikes.png" id="3_0o2n0"]
+[ext_resource type="Texture2D" uid="uid://bhl53epaav2se" path="res://Art/WhiteSquare.png" id="4_rx0bs"]
+[ext_resource type="Texture2D" uid="uid://b0cgsssbteqbc" path="res://Art/Tileset.png" id="5_v0sri"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwbd6"]
+texture = ExtResource("1_rl0vn")
+texture_region_size = Vector2i(182, 182)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-91, -91, 91, -91, 91, 91, -91, 91)
+
+[sub_resource type="TileSet" id="TileSet_j5deu"]
+tile_size = Vector2i(182, 182)
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_kwbd6")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17wul"]
+texture = ExtResource("5_v0sri")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_13ogv"]
+tile_size = Vector2i(128, 128)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.647059, 0.490196, 0.847059, 1)
+sources/1 = SubResource("TileSetAtlasSource_17wul")
+
+[node name="Game" type="Node2D"]
+
+[node name="SandBlock" type="Sprite2D" parent="."]
+position = Vector2(127, 489)
+texture = ExtResource("1_rl0vn")
+region_enabled = true
+region_rect = Rect2(0, 0, 182, 182)
+
+[node name="Snake" type="Sprite2D" parent="."]
+position = Vector2(414, 89)
+texture = ExtResource("2_2x2oy")
+
+[node name="Spikes" type="Sprite2D" parent="."]
+position = Vector2(176, 89)
+texture = ExtResource("3_0o2n0")
+
+[node name="WhiteSquare" type="Sprite2D" parent="."]
+position = Vector2(760, 118)
+texture = ExtResource("4_rx0bs")
+
+[node name="Dessert" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_j5deu")
+format = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_13ogv")
+format = 2

@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2vb2xyyosmok"]
+[gd_scene load_steps=8 format=3 uid="uid://cpvpuqy8nbf65"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="Texture2D" uid="uid://b2w0s1xaii2sf" path="res://Art/BackgroundSNakeGame.png" id="2_m4il0"]
-[ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://top_down_snake.tscn" id="3_4jjbe"]
+[ext_resource type="PackedScene" path="res://top_down_snake.tscn" id="3_4jjbe"]
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
-[ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="5_kxtf8"]
+[ext_resource type="PackedScene" path="res://hazard.tscn" id="5_kxtf8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
 friction = 0.2
