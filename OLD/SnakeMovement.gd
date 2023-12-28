@@ -27,6 +27,7 @@ func _process(delta):
 func _physics_process(delta):
 	if moveDir != 0:
 		add_constant_force(Vector2.RIGHT * moveDir * speed * delta);
+	
 		
 
 
