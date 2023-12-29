@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://67e5wfkp73cy"]
+
+[ext_resource type="PackedScene" uid="uid://cpvpuqy8nbf65" path="res://ScrollingLevel.tscn" id="1_toewd"]
+
+[node name="PixelPerfect" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(640, 360)
+
+[node name="Game" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_toewd")]

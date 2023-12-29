@@ -1,18 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://b31q3xik3sgc3"]
 
 [ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_7br8u"]
-[ext_resource type="Texture2D" uid="uid://b1xc0yqh17f10" path="res://Art/Snake.png" id="2_621ce"]
+[ext_resource type="Texture2D" uid="uid://0qak5oi6gm4f" path="res://Sprites/test.ase" id="2_jru8h"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nf86q"]
-height = 226.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubypd"]
+radius = 6.0
 
 [node name="TopDownSnake" type="RigidBody2D"]
 script = ExtResource("1_7br8u")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_nf86q")
+shape = SubResource("CircleShape2D_ubypd")
 
-[node name="Snake" type="Sprite2D" parent="."]
-position = Vector2(-7, -7)
-rotation = -1.58614
-texture = ExtResource("2_621ce")
+[node name="Test" type="Sprite2D" parent="."]
+texture = ExtResource("2_jru8h")
