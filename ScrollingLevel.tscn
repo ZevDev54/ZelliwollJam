@@ -109,7 +109,7 @@ libraries = {
 
 [node name="ScaleRig" type="Node2D" parent="AnimationPlayer"]
 position = Vector2(563, 283)
-scale = Vector2(1, 1.04995)
+scale = Vector2(1, 1.02492)
 
 [node name="SnakeCharmer" type="Sprite2D" parent="AnimationPlayer/ScaleRig"]
 texture_filter = 1
