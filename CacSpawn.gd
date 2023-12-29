@@ -2,7 +2,7 @@ extends Timer
 
 @export var screenWidth : float = 5000
 @export var spawnTime : float = 1;
-@export var cacLoad : Node;
+@export var spawnItem : PackedScene;
 
 @export var spawnNode : Node2D;
 
@@ -14,8 +14,8 @@ func findPos():
 
 func _on_timer_timeout():
 	print("sex time! (cactussy)")
-	var cactus = cacLoad.instantiate()
-	cactus.global_position = findPos();
-	add_child(cactus)
+	var spawned = spawnItem.instantiate()
+	spawned.global_position = findPos();
+	add_child(spawned)
 	spawnTime = randf_range(3.0, 5.0)
 	wait_time = spawnTime
