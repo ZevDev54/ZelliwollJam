@@ -27,3 +27,10 @@ func _physics_process(delta):
 	#print(name+slowdownMultiplier);
 
 
+
+
+func _on_body_entered(body:Node):
+	print(body.name);
+	if body.is_in_group("Hazards"):
+		print("I collided with a hazard!!!");
+		queue_free();
