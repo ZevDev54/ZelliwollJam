@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://i50lt082imaj"
+path="res://.godot/imported/Snake.gif-20064bfe1f59ef258be3fd1daa6b98df.tres"
+
+[deps]
+
+source_file="res://Sprites/GIFs/Snake.gif"
+dest_files=["res://.godot/imported/Snake.gif-20064bfe1f59ef258be3fd1daa6b98df.tres"]
+
+[params]
+
+frames_per_second=30
