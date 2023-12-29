@@ -9,6 +9,7 @@
 wait_time = 1.16
 autostart = true
 script = ExtResource("1_giv6p")
+screenWidth = 1000.0
 spawnItem = ExtResource("2_e1hle")
 spawnNode = NodePath("spawnPos")
 
