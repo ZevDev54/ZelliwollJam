@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://d1oq6u78jvflx"
+path="res://.godot/imported/Warning.gif-df8117f47e467497896d3c685ad1402b.tres"
+
+[deps]
+
+source_file="res://Sprites/GIFs/Warning.gif"
+dest_files=["res://.godot/imported/Warning.gif-df8117f47e467497896d3c685ad1402b.tres"]
+
+[params]
+
+frames_per_second=30
