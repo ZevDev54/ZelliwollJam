@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://batqypx3np4ij"]
 
 [ext_resource type="Script" path="res://CacSpawn.gd" id="1_giv6p"]
-[ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="2_e1hle"]
+[ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="2_3r3s1"]
 
 [node name="Spawn Timer" type="Node2D"]
 
@@ -9,7 +9,8 @@
 wait_time = 1.16
 autostart = true
 script = ExtResource("1_giv6p")
-spawnItem = ExtResource("2_e1hle")
+screenWidth = 1000.0
+spawnItem = ExtResource("2_3r3s1")
 spawnNode = NodePath("spawnPos")
 
 [node name="spawnPos" type="Node2D" parent="Timer"]

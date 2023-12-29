@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx2orklw1gjqj"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1mtw0iri16" path="res://ScrollingLevel.tscn" id="1_01qym"]
+
+[node name="GameContainer" type="Node2D"]
+
+[node name="Game" parent="." instance=ExtResource("1_01qym")]
+position = Vector2(73, 48)
