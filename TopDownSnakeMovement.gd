@@ -27,3 +27,9 @@ func _physics_process(delta):
 	#print(name+slowdownMultiplier);
 
 
+
+#only called when contacts hazard layer items.
+func _hurtbox_entered(area:Area2D):
+	print("I die!");
+	queue_free();
+	
