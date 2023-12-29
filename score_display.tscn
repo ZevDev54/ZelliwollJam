@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://hbj7yx1u3pup"]
+[gd_scene load_steps=3 format=3 uid="uid://dn1t5tklu0xaa"]
 
 [ext_resource type="Script" path="res://ScoreDisplay.gd" id="1_r0wpy"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="2_ke0y4"]
@@ -19,6 +19,7 @@ offset_left = 1092.0
 offset_top = 1.0
 offset_right = 1279.0
 offset_bottom = 41.0
+text = "dsdsdsd"
 script = ExtResource("2_ke0y4")
 ScoreText = NodePath(".")
 scoreKeeper = NodePath("..")
