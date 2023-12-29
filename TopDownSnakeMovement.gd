@@ -1,9 +1,12 @@
 extends RigidBody2D
 
-
+var pullSpeed := 100;
+var pushSpeed := 1000;
+var mouse_pos
 @export var slowDownDistance := 500;
 @export var time_held := 0
-var mouse_pos = get_global_mouse_position()
+
+
 var timer := Timer.new()
 
 var total = 0
@@ -22,6 +25,7 @@ func _physics_process(delta):
 
 
 	if Input.is_action_pressed("Pull"):
+		mouse_pos = get_global_mouse_position()
 		total += delta
 		
 
@@ -34,7 +38,7 @@ func _physics_process(delta):
 		timer.connect("timeout", self, "stopPull")
 		timer.wait_time = total
 		add_child(timer)
-		var speed := 100;
+	
 		timer.start()
 		
 		print("WORK")
@@ -47,8 +51,11 @@ func _physics_process(delta):
 		var slowdownMultiplier = clamp(distAsPercent, 0, 1);
 	
 		var normalized_velocity = velocity_vector.normalized()
-	
-		apply_central_force(normalized_velocity * speed * slowdownMultiplier);
+
+		
+		while(abs(mouse_pos -global_position > 20)):
+			apply_central_force(normalized_velocity * pullSpeed * slowdownMultiplier);
+
 
 	
 	
@@ -56,7 +63,7 @@ func _physics_process(delta):
 
 
 	if Input.is_action_just_pressed("Push"):
-		var mouse_pos = get_global_mouse_position()
+		mouse_pos = get_global_mouse_position()
 		var velocity_vector = mouse_pos - global_position;
 		var distance = velocity_vector.length();
 	
@@ -66,7 +73,7 @@ func _physics_process(delta):
 	
 		var normalized_velocity = velocity_vector.normalized()
 
-		apply_central_force(normalized_velocity * (speed*100) * slowdownMultiplier * -1);
+		apply_central_force(normalized_velocity * pushSpeed * slowdownMultiplier * -1);
 
 
 	var move_vec = Vector2()
@@ -84,5 +91,5 @@ func _physics_process(delta):
 	#print(name+slowdownMultiplier);
 
 func stopPull():
-	speed = 0
+	pullSpeed = 0
 
