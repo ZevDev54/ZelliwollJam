@@ -2,7 +2,7 @@ extends Timer
 
 @export var screenWidth : float = 5000
 @export var spawnTime : float = 1;
-@export var cacLoad : Node;
+@export var spawnItem : PackedScene;
 
 @export var spawnNode : Node2D;
 
