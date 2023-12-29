@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=11 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="Texture2D" uid="uid://b2w0s1xaii2sf" path="res://Art/BackgroundSNakeGame.png" id="2_m4il0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
 [ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="5_kxtf8"]
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://spawn_timer.tscn" id="6_4rnw5"]
+[ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
 friction = 0.2
@@ -78,3 +79,8 @@ position = Vector2(104, -1812)
 position = Vector2(-68, -33)
 scale = Vector2(3, 3)
 texture = SubResource("CompressedTexture2D_drlgu")
+
+[node name="SnakeCharmer" type="Sprite2D" parent="."]
+position = Vector2(557, 283)
+scale = Vector2(2.53125, 2.53125)
+texture = ExtResource("7_i082n")

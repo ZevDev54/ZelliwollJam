@@ -15,11 +15,9 @@ snakeNum = 10
 
 [node name="ScoreLabel" type="RichTextLabel" parent="." node_paths=PackedStringArray("ScoreText", "scoreKeeper")]
 layout_mode = 0
-offset_left = 1092.0
-offset_top = 1.0
-offset_right = 1279.0
-offset_bottom = 41.0
-text = "dsdsdsd"
+offset_right = 187.0
+offset_bottom = 40.0
+text = "######"
 script = ExtResource("2_ke0y4")
 ScoreText = NodePath(".")
 scoreKeeper = NodePath("..")

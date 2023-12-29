@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b31q3xik3sgc3"]
+[gd_scene load_steps=6 format=3 uid="uid://b31q3xik3sgc3"]
 
 [ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_7br8u"]
 [ext_resource type="Texture2D" uid="uid://bmmpgqbmftsoi" path="res://Sprites/PNGs/test.png" id="2_q02dm"]
+[ext_resource type="SpriteFrames" uid="uid://i50lt082imaj" path="res://Sprites/GIFs/Snake.gif" id="3_uxve2"]
+[ext_resource type="Script" path="res://SnakeAnimationController.gd" id="4_6t6sp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubypd"]
 radius = 6.0
@@ -14,4 +16,10 @@ script = ExtResource("1_7br8u")
 shape = SubResource("CircleShape2D_ubypd")
 
 [node name="Test" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_q02dm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_uxve2")
+animation = &"gif"
+script = ExtResource("4_6t6sp")
