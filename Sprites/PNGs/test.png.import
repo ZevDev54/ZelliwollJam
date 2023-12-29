@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qak5oi6gm4f"
-path="res://.godot/imported/test.ase-d3919727673cf61df3fbb14d713d83ab.ctex"
+uid="uid://bmmpgqbmftsoi"
+path="res://.godot/imported/test.png-072980d547614859a447168ba2520557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/test.ase"
-dest_files=["res://.godot/imported/test.ase-d3919727673cf61df3fbb14d713d83ab.ctex"]
+source_file="res://Sprites/PNGs/test.png"
+dest_files=["res://.godot/imported/test.png-072980d547614859a447168ba2520557.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

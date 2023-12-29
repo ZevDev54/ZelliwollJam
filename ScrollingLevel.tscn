@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpvpuqy8nbf65"]
+[gd_scene load_steps=10 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="Texture2D" uid="uid://b2w0s1xaii2sf" path="res://Art/BackgroundSNakeGame.png" id="2_m4il0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
 [ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="5_kxtf8"]
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://spawn_timer.tscn" id="6_4rnw5"]
-[ext_resource type="Texture2D" uid="uid://0qak5oi6gm4f" path="res://Sprites/test.ase" id="7_yafpm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
 friction = 0.2
@@ -14,6 +13,9 @@ friction = 0.2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
 shader_parameter/motion = Vector2(0, -0.3)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_drlgu"]
+load_path = "res://.godot/imported/test.ase-d3919727673cf61df3fbb14d713d83ab.ctex"
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
@@ -77,4 +79,4 @@ position = Vector2(104, -1812)
 [node name="Test" type="Sprite2D" parent="."]
 position = Vector2(-68, -33)
 scale = Vector2(3, 3)
-texture = ExtResource("7_yafpm")
+texture = SubResource("CompressedTexture2D_drlgu")

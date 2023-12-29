@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b31q3xik3sgc3"]
 
 [ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_7br8u"]
-[ext_resource type="Texture2D" uid="uid://0qak5oi6gm4f" path="res://Sprites/test.ase" id="2_jru8h"]
+[ext_resource type="Texture2D" uid="uid://bmmpgqbmftsoi" path="res://Sprites/PNGs/test.png" id="2_q02dm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubypd"]
 radius = 6.0
@@ -13,4 +13,4 @@ script = ExtResource("1_7br8u")
 shape = SubResource("CircleShape2D_ubypd")
 
 [node name="Test" type="Sprite2D" parent="."]
-texture = ExtResource("2_jru8h")
+texture = ExtResource("2_q02dm")
