@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
 [ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://hazard.tscn" id="5_kxtf8"]
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://spawn_timer.tscn" id="6_4rnw5"]
-[ext_resource type="Script" path="res://Snake Count.gd" id="6_yy1eh"]
+[ext_resource type="Script" path="res://SnakeCount.gd" id="6_u71mi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
@@ -59,24 +59,24 @@ position = Vector2(-68, -33)
 scale = Vector2(3, 3)
 texture = SubResource("CompressedTexture2D_drlgu")
 
-[node name="Snake Count" type="Node2D" parent="."]
-script = ExtResource("6_yy1eh")
+[node name="SnakeCount" type="Node2D" parent="."]
+script = ExtResource("6_u71mi")
 
-[node name="TopDownSnake3" parent="Snake Count" instance=ExtResource("3_4jjbe")]
+[node name="TopDownSnake3" parent="SnakeCount" instance=ExtResource("3_4jjbe")]
 position = Vector2(253, 272)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
 speed = 400
 
-[node name="TopDownSnake2" parent="Snake Count" instance=ExtResource("3_4jjbe")]
+[node name="TopDownSnake2" parent="SnakeCount" instance=ExtResource("3_4jjbe")]
 position = Vector2(-63, 302)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
 speed = 400
 
-[node name="TopDownSnake" parent="Snake Count" instance=ExtResource("3_4jjbe")]
+[node name="TopDownSnake" parent="SnakeCount" instance=ExtResource("3_4jjbe")]
 position = Vector2(-247, 288)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
