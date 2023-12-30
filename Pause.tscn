@@ -1,19 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci1facn80wij"]
+[gd_scene load_steps=3 format=3 uid="uid://dv3rl1vblicym"]
 
 [ext_resource type="Script" path="res://Pause.gd" id="1_vqu2p"]
 [ext_resource type="PackedScene" uid="uid://8hkcxo7gk684" path="res://volume.tscn" id="2_mixyd"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -36.0
-offset_top = 35.0
-offset_right = -36.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_vqu2p")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

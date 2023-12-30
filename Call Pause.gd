@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $Pause
+@export var pause_menu : Control
 
 var paused = false
 
