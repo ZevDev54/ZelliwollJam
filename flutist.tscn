@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://betofd2qmadse"]
+
+[ext_resource type="Script" path="res://FlutistAnimation.gd" id="1_3ra3d"]
+[ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="2_6dudh"]
+
+[sub_resource type="Animation" id="Animation_olpfj"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yumlr"]
+_data = {
+"Idle": SubResource("Animation_olpfj")
+}
+
+[node name="Flutist" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("ScaleRig/SnakeCharmer")
+libraries = {
+"": SubResource("AnimationLibrary_yumlr")
+}
+script = ExtResource("1_3ra3d")
+
+[node name="ScaleRig" type="Node2D" parent="AnimationPlayer"]
+position = Vector2(1201, 640)
+
+[node name="SnakeCharmer" type="Sprite2D" parent="AnimationPlayer/ScaleRig"]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_6dudh")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimationPlayer"]
