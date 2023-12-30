@@ -16,5 +16,7 @@ func _process(delta):
 	print(score)
 
 func scoreAdd(delta):
+	if Singletons.snakes != null:
+		snakeNum = Singletons.snakes.GetSnakeCount();
 	return snakeNum * 5 * delta
 	

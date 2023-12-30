@@ -1,15 +1,22 @@
+class_name SnakeManager
 extends Node2D
 
+@export var snakeStartingAmount := 3;
 @export var snake : PackedScene; 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Singletons.snakes == null:
+		Singletons.snakes = self;
 
+	for i in snakeStartingAmount:
+		SpawnSnake();
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func SpawnSnake():
-	pass
+	var snakeInstance = snake.instantiate();
+	add_child(snakeInstance);
+
+func GetSnakeCount():
+	return get_child_count();
