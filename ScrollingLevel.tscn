@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=15 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://top_down_snake.tscn" id="3_4jjbe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://spawn_timer.tscn" id="6_4rnw5"]
 [ext_resource type="Script" path="res://FlutistAnimation.gd" id="6_egoxv"]
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
+[ext_resource type="Script" path="res://SnakeManager.gd" id="8_8qsnu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
 friction = 0.2
@@ -43,9 +44,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 
+[sub_resource type="Animation" id="Animation_p33q8"]
+resource_name = "Playing"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yumlr"]
 _data = {
-"Idle": SubResource("Animation_olpfj")
+"Idle": SubResource("Animation_olpfj"),
+"Playing": SubResource("Animation_p33q8")
 }
 
 [node name="Game" type="Node2D"]
@@ -132,3 +137,6 @@ position = Vector2(563, 283)
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("7_i082n")
+
+[node name="SnakeManager" type="Node2D" parent="."]
+script = ExtResource("8_8qsnu")

@@ -1,6 +1,6 @@
-extends AudioStreamPlayer2D
+extends Node2D
 
-
+@export var snake : PackedScene; 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,5 +11,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func PlayRandomTrack():
+func SpawnSnake():
 	pass

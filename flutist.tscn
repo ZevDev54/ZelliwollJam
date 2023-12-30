@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://betofd2qmadse"]
+[gd_scene load_steps=11 format=3 uid="uid://betofd2qmadse"]
 
 [ext_resource type="Script" path="res://FlutistAnimation.gd" id="1_3ra3d"]
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="2_6dudh"]
 [ext_resource type="SpriteFrames" uid="uid://ba48w0tojeal8" path="res://Sprites/GIFs/SnakeCharmerPlay.gif" id="3_xqm8c"]
-[ext_resource type="Texture2D" uid="uid://ch38qe2sjkpm6" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="4_4shb5"]
+[ext_resource type="Texture2D" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="4_4shb5"]
 [ext_resource type="Script" path="res://PlayAndRandomizeTrack.gd" id="4_vs2le"]
 
 [sub_resource type="Animation" id="Animation_olpfj"]
@@ -32,9 +32,13 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 
+[sub_resource type="Animation" id="Animation_p33q8"]
+resource_name = "Playing"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yumlr"]
 _data = {
-"Idle": SubResource("Animation_olpfj")
+"Idle": SubResource("Animation_olpfj"),
+"Playing": SubResource("Animation_p33q8")
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q6hhd"]
@@ -64,7 +68,6 @@ script = ExtResource("1_3ra3d")
 
 [node name="ScaleRig" type="Node2D" parent="AnimationPlayer"]
 position = Vector2(1201, 640)
-scale = Vector2(1, 1.0081)
 
 [node name="SnakeCharmer" type="Sprite2D" parent="AnimationPlayer/ScaleRig"]
 visible = false
@@ -77,7 +80,7 @@ texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("3_xqm8c")
 animation = &"gif"
-frame_progress = 0.383035
+frame_progress = 0.708181
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1
