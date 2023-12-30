@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://kdit1rt6abol"
+path="res://.godot/imported/Pig.gif-259999ac16e20fb55f24438cd5b2fdb9.tres"
+
+[deps]
+
+source_file="res://Sprites/GIFs/Pig.gif"
+dest_files=["res://.godot/imported/Pig.gif-259999ac16e20fb55f24438cd5b2fdb9.tres"]
+
+[params]
+
+frames_per_second=30
