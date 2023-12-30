@@ -24,4 +24,3 @@ autoplay = true
 bus = &"Music"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true

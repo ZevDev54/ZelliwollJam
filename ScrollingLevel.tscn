@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://FlutistAnimation.gd" id="6_egoxv"]
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
 [ext_resource type="Script" path="res://SnakeManager.gd" id="8_8qsnu"]
-[ext_resource type="PackedScene" uid="uid://d3jc7yrqme1j3" path="res://music_cloud.tscn" id="9_bkhhy"]
+[ext_resource type="PackedScene" uid="uid://i1m1ctqjj6jj" path="res://music_cloud.tscn" id="9_bkhhy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
