@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://FlutistAnimation.gd" id="1_3ra3d"]
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="2_6dudh"]
 [ext_resource type="SpriteFrames" uid="uid://ba48w0tojeal8" path="res://Sprites/GIFs/SnakeCharmerPlay.gif" id="3_xqm8c"]
-[ext_resource type="Texture2D" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="4_4shb5"]
+[ext_resource type="Texture2D" uid="uid://ch38qe2sjkpm6" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="4_4shb5"]
 [ext_resource type="Script" path="res://PlayAndRandomizeTrack.gd" id="4_vs2le"]
 
 [sub_resource type="Animation" id="Animation_olpfj"]
@@ -160,7 +160,7 @@ scale = Vector2(1, 1.00456)
 
 [node name="ScaleRig" type="Node2D" parent="."]
 position = Vector2(1201, 640)
-scale = Vector2(0.985, 1)
+scale = Vector2(0.986324, 1.00883)
 
 [node name="ANimatedSnakeCharmer" type="AnimatedSprite2D" parent="ScaleRig"]
 texture_filter = 1

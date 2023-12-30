@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://i1m1ctqjj6jj"]
 
-[ext_resource type="Texture2D" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="1_byq1b"]
+[ext_resource type="Texture2D" uid="uid://ch38qe2sjkpm6" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="1_byq1b"]
 [ext_resource type="Script" path="res://music_cloud.gd" id="1_nhnam"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_be7lf"]
