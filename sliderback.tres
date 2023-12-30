@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ctlsbf7v01maq"]
+
+[ext_resource type="Texture2D" uid="uid://b8bq5m2nbx1qh" path="res://Sprites/UI/SliderTrack.png" id="1_mrx20"]
+
+[resource]
+content_margin_left = 4.0
+content_margin_top = 10.0
+content_margin_right = 4.0
+content_margin_bottom = 15.0
+texture = ExtResource("1_mrx20")
