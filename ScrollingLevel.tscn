@@ -127,7 +127,6 @@ script = ExtResource("6_egoxv")
 
 [node name="ScaleRig" type="Node2D" parent="Control/AnimationPlayer"]
 position = Vector2(563, 283)
-scale = Vector2(1, 1.0269)
 
 [node name="SnakeCharmer" type="Sprite2D" parent="Control/AnimationPlayer/ScaleRig"]
 texture_filter = 1
