@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=12 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://top_down_snake.tscn" id="3_4jjbe"]
 [ext_resource type="Texture2D" uid="uid://bv2gkvmherjjl" path="res://Sprites/PNGs/SandBackground.png" id="4_1jskn"]
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
+[ext_resource type="PackedScene" uid="uid://betofd2qmadse" path="res://flutist.tscn" id="4_tpk63"]
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://spawn_timer.tscn" id="6_4rnw5"]
-[ext_resource type="Script" path="res://FlutistAnimation.gd" id="6_egoxv"]
-[ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
 [ext_resource type="Script" path="res://SnakeManager.gd" id="8_8qsnu"]
 [ext_resource type="PackedScene" uid="uid://i1m1ctqjj6jj" path="res://music_cloud.tscn" id="9_bkhhy"]
 [ext_resource type="PackedScene" uid="uid://d1rg6fo8agun0" path="res://prey_spanwer.tscn" id="9_h6dr6"]
@@ -16,41 +15,6 @@ shader = ExtResource("1_46n0g")
 shader_parameter/motion = Vector2(0, -0.3)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_drlgu"]
-
-[sub_resource type="Animation" id="Animation_olpfj"]
-resource_name = "Idle"
-loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5, 1)
-}
-
-[sub_resource type="Animation" id="Animation_p33q8"]
-resource_name = "Playing"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yumlr"]
-_data = {
-"Idle": SubResource("Animation_olpfj"),
-"Playing": SubResource("Animation_p33q8")
-}
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
@@ -98,20 +62,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
-root_node = NodePath("ScaleRig/SnakeCharmer")
-libraries = {
-"": SubResource("AnimationLibrary_yumlr")
-}
-script = ExtResource("6_egoxv")
-
-[node name="ScaleRig" type="Node2D" parent="Control/AnimationPlayer"]
-position = Vector2(563, 283)
-
-[node name="SnakeCharmer" type="Sprite2D" parent="Control/AnimationPlayer/ScaleRig"]
-texture_filter = 1
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("7_i082n")
+[node name="Flutist" parent="Control" instance=ExtResource("4_tpk63")]
+layout_mode = 1
+offset_left = -635.0
+offset_top = -362.0
+offset_right = -635.0
+offset_bottom = -362.0
 
 [node name="SnakeManager" type="Node2D" parent="." node_paths=PackedStringArray("spawnPos")]
 position = Vector2(0, 519)

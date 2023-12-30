@@ -10,8 +10,11 @@ wait_time = 1.16
 autostart = true
 script = ExtResource("1_e1acx")
 screenWidth = 1000.0
+minSpawnTime = 4.0
+maxSpawnTime = 6.0
 spawnItem = ExtResource("2_15bre")
 spawnNode = NodePath("spawnPos")
+speedupRate = 0.0
 
 [node name="spawnPos" type="Node2D" parent="Timer"]
 

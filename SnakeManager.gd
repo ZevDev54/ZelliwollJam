@@ -18,8 +18,9 @@ func _ready():
 
 func SpawnSnake(position):
 	var snakeInstance = snake.instantiate();
-	snakeInstance.global_position = position;
-	add_child(snakeInstance);
+	add_child(snakeInstance); 
 
+	snakeInstance.global_position = position;
+	
 func GetSnakeCount():
 	return get_child_count();
