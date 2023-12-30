@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=16 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://scrolling.gdshader" id="1_46n0g"]
+[ext_resource type="Script" path="res://ScrollingLevel.gd" id="1_xec1f"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://top_down_snake.tscn" id="3_4jjbe"]
 [ext_resource type="Texture2D" uid="uid://bv2gkvmherjjl" path="res://Sprites/PNGs/SandBackground.png" id="4_1jskn"]
 [ext_resource type="Script" path="res://speedmanager.gd" id="4_o0uxn"]
@@ -53,6 +54,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_xec1f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
