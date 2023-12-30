@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgh1gpdv7chjo"]
+[gd_scene load_steps=5 format=3 uid="uid://cgh1gpdv7chjo"]
 
 [ext_resource type="Script" path="res://Main Menu.gd" id="1_u6txy"]
 [ext_resource type="PackedScene" uid="uid://dyk8fbuimjbce" path="res://game_container.tscn" id="2_28v70"]
 [ext_resource type="PackedScene" uid="uid://8hkcxo7gk684" path="res://volume.tscn" id="2_m24t2"]
+[ext_resource type="Theme" uid="uid://bytkerh3w8iq" path="res://PixelFont.tres" id="3_jq2jp"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u6txy")
 changeToScene = ExtResource("2_28v70")
+metadata/_edit_vertical_guides_ = [-181.0]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -28,10 +30,12 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jq2jp")
 text = "Play"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jq2jp")
 text = "Quit"
 
 [node name="Master" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_m24t2")]
