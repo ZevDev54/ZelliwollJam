@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyk8fbuimjbce"]
+[gd_scene load_steps=4 format=3 uid="uid://dyk8fbuimjbce"]
 
 [ext_resource type="PackedScene" uid="uid://dhk1mtw0iri16" path="res://ScrollingLevel.tscn" id="1_01qym"]
-[ext_resource type="AudioStream" uid="uid://ceiiqfuw1hgsj" path="res://Audio/Music/MenuMusic.wav" id="2_sqnug"]
+[ext_resource type="PackedScene" uid="uid://dn1t5tklu0xaa" path="res://score_display.tscn" id="1_ytqln"]
+[ext_resource type="AudioStream" uid="uid://dq7ofs07kyyd4" path="res://Audio/Music/GameMusic.wav" id="2_1ypi8"]
 
 [node name="GameContainer" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreDisplay" parent="UI" instance=ExtResource("1_ytqln")]
+layout_mode = 1
 
 [node name="Game" parent="." instance=ExtResource("1_01qym")]
 position = Vector2(73, 48)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_sqnug")
+stream = ExtResource("2_1ypi8")
 autoplay = true
 bus = &"Music"
 

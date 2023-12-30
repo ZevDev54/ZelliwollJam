@@ -8,9 +8,7 @@
 [ext_resource type="Script" path="res://FlutistAnimation.gd" id="6_egoxv"]
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
 [ext_resource type="Script" path="res://SnakeManager.gd" id="8_8qsnu"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsrv4"]
-friction = 0.2
+[ext_resource type="PackedScene" uid="uid://d3jc7yrqme1j3" path="res://music_cloud.tscn" id="9_bkhhy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
@@ -57,27 +55,6 @@ _data = {
 texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="TopDownSnake" parent="." instance=ExtResource("3_4jjbe")]
-position = Vector2(-247, 288)
-mass = 0.6
-physics_material_override = SubResource("PhysicsMaterial_lsrv4")
-gravity_scale = 0.0
-speed = 400
-
-[node name="TopDownSnake2" parent="." instance=ExtResource("3_4jjbe")]
-position = Vector2(-63, 302)
-mass = 0.6
-physics_material_override = SubResource("PhysicsMaterial_lsrv4")
-gravity_scale = 0.0
-speed = 400
-
-[node name="TopDownSnake3" parent="." instance=ExtResource("3_4jjbe")]
-position = Vector2(253, 272)
-mass = 0.6
-physics_material_override = SubResource("PhysicsMaterial_lsrv4")
-gravity_scale = 0.0
-speed = 400
 
 [node name="GameSpeedManager" type="Node" parent="."]
 script = ExtResource("4_o0uxn")
@@ -140,3 +117,6 @@ texture = ExtResource("7_i082n")
 
 [node name="SnakeManager" type="Node2D" parent="."]
 script = ExtResource("8_8qsnu")
+snake = ExtResource("3_4jjbe")
+
+[node name="music_cloud" parent="." instance=ExtResource("9_bkhhy")]
