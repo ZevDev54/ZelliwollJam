@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://br1y4j0lit7d"]
+
+[ext_resource type="Script" path="res://Call Pause.gd" id="1_n3wq8"]
+[ext_resource type="PackedScene" uid="uid://ci1facn80wij" path="res://Pause.tscn" id="2_l1yxp"]
+
+[node name="Call Pause" type="Node2D"]
+script = ExtResource("1_n3wq8")
+
+[node name="Pause" parent="." instance=ExtResource("2_l1yxp")]
+scale = Vector2(17.5754, 2.37931)
