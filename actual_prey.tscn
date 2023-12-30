@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtlojth3mbra7"]
+
+[ext_resource type="Script" path="res://hazardmovement.gd" id="1_b5fs7"]
+[ext_resource type="SpriteFrames" uid="uid://cck2pesls7wi4" path="res://Sprites/GIFs/Mouse.gif" id="4_ips0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iy5jc"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0gis"]
+radius = 33.0
+
+[node name="ActualPrey" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_b5fs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iy5jc")
+
+[node name="Snackbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snackbox"]
+shape = SubResource("CircleShape2D_e0gis")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("4_ips0d")
+animation = &"gif"
+frame_progress = 0.633991
