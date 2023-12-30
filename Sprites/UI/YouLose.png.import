@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtc3m7m020we4"
-path="res://.godot/imported/YouLose.png-b5a4056fe24667de397cf1dc4b759183.ctex"
+path="res://.godot/imported/YouLose.png-610b6c44bdb7cc7f23d1c6786062eae9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PNGs/YouLose.png"
-dest_files=["res://.godot/imported/YouLose.png-b5a4056fe24667de397cf1dc4b759183.ctex"]
+source_file="res://Sprites/UI/YouLose.png"
+dest_files=["res://.godot/imported/YouLose.png-610b6c44bdb7cc7f23d1c6786062eae9.ctex"]
 
 [params]
 
