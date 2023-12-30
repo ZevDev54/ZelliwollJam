@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cph5kc1slacrp"]
+[gd_scene load_steps=9 format=3 uid="uid://cph5kc1slacrp"]
 
 [ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_lx2xd"]
 [ext_resource type="PackedScene" uid="uid://dct5qyhkxm8di" path="res://snake_death.tscn" id="2_v3s04"]
 [ext_resource type="Texture2D" uid="uid://bmmpgqbmftsoi" path="res://Sprites/PNGs/test.png" id="3_oth0w"]
 [ext_resource type="SpriteFrames" uid="uid://cck2pesls7wi4" path="res://Sprites/GIFs/Mouse.gif" id="4_b6hn0"]
 [ext_resource type="Script" path="res://SnakeAnimationController.gd" id="5_jn8l8"]
+[ext_resource type="Script" path="res://PreyFood.gd" id="6_4crlq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t60sd"]
 radius = 9.0
@@ -35,13 +36,14 @@ sprite_frames = ExtResource("4_b6hn0")
 animation = &"gif"
 script = ExtResource("5_jn8l8")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="SnackBox" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 8
+script = ExtResource("6_4crlq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnackBox"]
 position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_2qi37")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="area_entered" from="Hitbox" to="." method="_hurtbox_entered"]
+[connection signal="area_entered" from="SnackBox" to="." method="_hurtbox_entered"]
