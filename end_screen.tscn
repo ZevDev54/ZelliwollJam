@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cf84yq5iqvrpr"]
+[gd_scene format=3 uid="uid://brl436aov4t0a"]
 
 [node name="End Screen" type="Control"]
 layout_mode = 3
@@ -18,6 +18,8 @@ layout_mode = 2
 
 [node name="Replay" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Replay"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Quit"
