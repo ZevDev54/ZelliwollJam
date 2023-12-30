@@ -67,18 +67,21 @@ position = Vector2(253, 272)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
-speed = 400
+slowDownDistance = 500
+time_held = 0
 
 [node name="TopDownSnake2" parent="SnakeCount" instance=ExtResource("3_4jjbe")]
 position = Vector2(-63, 302)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
-speed = 400
+slowDownDistance = 500
+time_held = 0
 
 [node name="TopDownSnake" parent="SnakeCount" instance=ExtResource("3_4jjbe")]
 position = Vector2(-247, 288)
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_lsrv4")
 gravity_scale = 0.0
-speed = 400
+slowDownDistance = 500
+time_held = 0

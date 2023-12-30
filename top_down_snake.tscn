@@ -9,9 +9,6 @@ radius = 6.0
 [node name="TopDownSnake" type="RigidBody2D"]
 lock_rotation = true
 script = ExtResource("1_7br8u")
-speed = null
-slowDownDistance = null
-time_held = null
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ubypd")

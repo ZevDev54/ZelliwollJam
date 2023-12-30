@@ -1,20 +1,25 @@
 extends RigidBody2D
 
-var pullSpeed := 100;
-var pushSpeed := 1000;
+var pullSpeed := 5000;
+var pushSpeed := 10000;
 var mouse_pos
+var slowdownMultiplier 
+var normalized_velocity
+var friction 
+
 @export var slowDownDistance := 500;
 @export var time_held := 0
 
 
-var timer := Timer.new()
+
+var tween = create_tween()
+
+
 
 var total = 0
 const MOVE_SPEED = 300
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +28,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 
+	velocity -= friction
 
 	if Input.is_action_pressed("Pull"):
 		mouse_pos = get_global_mouse_position()
@@ -33,13 +39,17 @@ func _physics_process(delta):
 
 		
 	if Input.is_action_just_released("Pull"):
-		
-		
-		timer.connect("timeout", self, "stopPull")
-		timer.wait_time = total
+		var timer : Timer = Timer.new()
 		add_child(timer)
-	
+
+		
+		timer.wait_time = total
+		timer.one_shot = true
+		timer.timeout.connect(stopPull)
 		timer.start()
+		
+		pullSpeed = 5000
+		
 		
 		print("WORK")
 		
@@ -48,13 +58,13 @@ func _physics_process(delta):
 	
 		var distAsPercent = distance / slowDownDistance;
 	
-		var slowdownMultiplier = clamp(distAsPercent, 0, 1);
+		slowdownMultiplier = clamp(distAsPercent, 0, 1);
 	
-		var normalized_velocity = velocity_vector.normalized()
+		normalized_velocity = velocity_vector.normalized()
+
+		apply_central_force(normalized_velocity * pullSpeed * slowdownMultiplier);
 
 		
-		while(abs(mouse_pos -global_position > 20)):
-			apply_central_force(normalized_velocity * pullSpeed * slowdownMultiplier);
 
 
 	
@@ -67,11 +77,11 @@ func _physics_process(delta):
 		var velocity_vector = mouse_pos - global_position;
 		var distance = velocity_vector.length();
 	
-		var distAsPercent = distance / slowDownDistance;
+		var distAsPercent = slowDownDistance / distance;
 	
-		var slowdownMultiplier = clamp(distAsPercent, 0, 1);
+		slowdownMultiplier = clamp(distAsPercent, 0, 1);
 	
-		var normalized_velocity = velocity_vector.normalized()
+		normalized_velocity = velocity_vector.normalized()
 
 		apply_central_force(normalized_velocity * pushSpeed * slowdownMultiplier * -1);
 
@@ -91,5 +101,6 @@ func _physics_process(delta):
 	#print(name+slowdownMultiplier);
 
 func stopPull():
-	pullSpeed = 0
+	friction = 300
+
 
