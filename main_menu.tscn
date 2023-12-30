@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgh1gpdv7chjo"]
+[gd_scene load_steps=7 format=3 uid="uid://cgh1gpdv7chjo"]
 
 [ext_resource type="Script" path="res://Main Menu.gd" id="1_u6txy"]
 [ext_resource type="PackedScene" uid="uid://dyk8fbuimjbce" path="res://game_container.tscn" id="2_28v70"]
 [ext_resource type="PackedScene" uid="uid://8hkcxo7gk684" path="res://volume.tscn" id="2_m24t2"]
-[ext_resource type="Theme" uid="uid://bytkerh3w8iq" path="res://PixelFont.tres" id="3_jq2jp"]
+[ext_resource type="Theme" path="res://PixelFont.tres" id="3_jq2jp"]
+[ext_resource type="Texture2D" uid="uid://bv2gkvmherjjl" path="res://Sprites/PNGs/SandBackground.png" id="5_ucjjw"]
+[ext_resource type="PackedScene" uid="uid://betofd2qmadse" path="res://flutist.tscn" id="6_4377v"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -49,6 +51,42 @@ busName = "Music"
 [node name="sfx" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_m24t2")]
 layout_mode = 2
 busName = "sfx"
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SandScaler" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2337.0
+offset_top = -1539.0
+offset_right = -2297.0
+offset_bottom = -1499.0
+scale = Vector2(1.27, 1.27)
+
+[node name="TextureRect" type="TextureRect" parent="Background/SandScaler"]
+z_index = -10
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4784.0
+offset_bottom = 3013.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ucjjw")
+stretch_mode = 1
+
+[node name="Flutist" parent="Background" instance=ExtResource("6_4377v")]
+layout_mode = 1
+offset_left = -1822.0
+offset_top = -952.0
+offset_right = -1822.0
+offset_bottom = -952.0
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
