@@ -1,5 +1,18 @@
 extends Node2D
 
+@onready var pause_menu = $Pause
+var paused = false
 
-func Input.on_key_just_pressed("Pause"):
-	get_tree().change_scene_to_file("res://Pause.tscn")
+func _process(_delta):
+	if Input.is_action_just_pressed("Pause"):
+		pauseMenu()
+
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+
+	paused = !paused
