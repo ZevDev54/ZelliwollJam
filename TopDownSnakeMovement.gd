@@ -3,6 +3,8 @@ extends RigidBody2D
 @export var speed := 100;
 @export var slowDownDistance := 500;
 
+@export var deathFX: PackedScene;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -38,5 +40,12 @@ func _physics_process(delta):
 #only called when contacts hazard layer items.
 func _hurtbox_entered(area:Area2D):
 	print("I die!");
+
+	var current_scene = get_tree().get_current_scene()
+	var instance : Node2D = deathFX.instantiate()
+	current_scene.add_child(instance);
+
+	instance.position = global_position;
+	print(instance.name, instance.position)
 	queue_free();
 	
