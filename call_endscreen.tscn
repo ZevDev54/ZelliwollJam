@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2h4jjf5wa775"]
+
+[ext_resource type="Script" path="res://call_endscreen.gd" id="1_7y0wa"]
+
+[node name="call_endscreen" type="Node2D"]
+script = ExtResource("1_7y0wa")
