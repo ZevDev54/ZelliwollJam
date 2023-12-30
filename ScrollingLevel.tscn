@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3mljqg2pmv2p" path="res://Sprites/PNGs/SnakeCharmer.png" id="7_i082n"]
 [ext_resource type="Script" path="res://SnakeManager.gd" id="8_8qsnu"]
 [ext_resource type="PackedScene" path="res://music_cloud.tscn" id="9_bkhhy"]
-[ext_resource type="PackedScene" uid="uid://2bsqqciie14y" path="res://call_pause.tscn" id="11_bsxis"]
+[ext_resource type="PackedScene" uid="uid://br1y4j0lit7d" path="res://call_pause.tscn" id="11_bsxis"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("1_46n0g")
