@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b31q3xik3sgc3"]
+[gd_scene load_steps=8 format=3 uid="uid://b31q3xik3sgc3"]
 
 [ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_7br8u"]
+[ext_resource type="PackedScene" uid="uid://dct5qyhkxm8di" path="res://snake_death.tscn" id="2_gr4eq"]
 [ext_resource type="Texture2D" uid="uid://bmmpgqbmftsoi" path="res://Sprites/PNGs/test.png" id="2_q02dm"]
 [ext_resource type="SpriteFrames" uid="uid://i50lt082imaj" path="res://Sprites/GIFs/Snake.gif" id="3_uxve2"]
 [ext_resource type="Script" path="res://SnakeAnimationController.gd" id="4_6t6sp"]
@@ -14,8 +15,11 @@ radius = 18.0
 height = 88.0
 
 [node name="TopDownSnake" type="RigidBody2D"]
+gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_7br8u")
+speed = 400
+deathFX = ExtResource("2_gr4eq")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)

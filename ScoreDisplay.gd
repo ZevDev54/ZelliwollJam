@@ -13,8 +13,10 @@ var scoreUnrounded := 0.0;
 func _process(delta):
 	scoreUnrounded += scoreAdd(delta)
 	score = ceili(scoreUnrounded)
-	print(score)
+	#print(score)
 
 func scoreAdd(delta):
+	if Singletons.snakes != null:
+		snakeNum = Singletons.snakes.GetSnakeCount();
 	return snakeNum * 5 * delta
 	

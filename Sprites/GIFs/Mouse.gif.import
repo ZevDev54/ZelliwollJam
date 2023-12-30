@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cck2pesls7wi4"
+path="res://.godot/imported/Mouse.gif-af7a9c3df473e4da5ee69232e75ee37e.tres"
+
+[deps]
+
+source_file="res://Sprites/GIFs/Mouse.gif"
+dest_files=["res://.godot/imported/Mouse.gif-af7a9c3df473e4da5ee69232e75ee37e.tres"]
+
+[params]
+
+frames_per_second=30
