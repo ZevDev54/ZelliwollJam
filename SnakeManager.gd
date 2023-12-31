@@ -4,7 +4,10 @@ extends Node2D
 @export var snakeStartingAmount := 3;
 @export var snake : PackedScene; 
 
+
 @export var spawnPos : Node2D;
+
+@export var loseScreen: Control;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +18,10 @@ func _ready():
 	for i in snakeStartingAmount:
 		SpawnSnake(spawnPos.global_position);
 
+
+func _process(delta):
+	if GetSnakeCount() == 0:
+		loseScreen.visible = true;
 
 func SpawnSnake(position):
 	var snakeInstance = snake.instantiate();

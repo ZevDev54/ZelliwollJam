@@ -32,7 +32,9 @@ func _on_timer_timeout():
 	minSpawnTime -= speedupRate;
 	maxSpawnTime -= speedupRate;
 
-	minSpawnTime = clamp(minSpawnTime, 0.01, 1000)
-	maxSpawnTime = clamp(maxSpawnTime, 0.01, 1000)
+
+	minSpawnTime = clamp(minSpawnTime, 0.4, 1000)
+	maxSpawnTime = clamp(maxSpawnTime, 0.4, 1000)
+	print(minSpawnTime);
 
 
