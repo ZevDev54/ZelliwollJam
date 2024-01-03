@@ -5,18 +5,29 @@ extends Node2D
 @export var snake : PackedScene; 
 
 
+@export var spawnPos : Node2D;
+
+@export var loseScreen: Control;
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Singletons.snakes == null:
 		Singletons.snakes = self;
 
 	for i in snakeStartingAmount:
-		SpawnSnake();
+		SpawnSnake(spawnPos.global_position);
 
 
-func SpawnSnake():
+func _process(delta):
+	if GetSnakeCount() == 0:
+		loseScreen.visible = true;
+
+func SpawnSnake(position):
 	var snakeInstance = snake.instantiate();
-	add_child(snakeInstance);
+	add_child(snakeInstance); 
 
+	snakeInstance.global_position = position;
+	
 func GetSnakeCount():
 	return get_child_count();

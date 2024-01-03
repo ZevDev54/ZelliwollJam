@@ -1,7 +1,5 @@
-class_name AudioRandom;
-extends AudioStreamPlayer2D
+extends Node2D
 
-@export var licksonmydicks : Array[AudioStream];
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func PlayRandomTrack():
-	stream = licksonmydicks[randi_range(0, licksonmydicks.size()-1)]
-	play()

@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bwbpaccjjjr47" path="res://Sprites/PNGs/Cactus4.png" id="7_3ew5v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iy5jc"]
-radius = 30.2655
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0gis"]
-radius = 56.0
+radius = 33.0
 
 [node name="Hazard" type="StaticBody2D"]
 collision_layer = 4

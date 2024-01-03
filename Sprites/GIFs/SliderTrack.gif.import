@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://c75tyu0lig3lf"
+path="res://.godot/imported/SliderTrack.gif-b2d8dafc8dcd5c29f2511e4742a7274a.tres"
+
+[deps]
+
+source_file="res://Sprites/GIFs/SliderTrack.gif"
+dest_files=["res://.godot/imported/SliderTrack.gif-b2d8dafc8dcd5c29f2511e4742a7274a.tres"]
+
+[params]
+
+frames_per_second=30

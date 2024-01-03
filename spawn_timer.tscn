@@ -10,8 +10,10 @@ wait_time = 1.16
 autostart = true
 script = ExtResource("1_giv6p")
 screenWidth = 1000.0
+minSpawnTime = 3.0
 spawnItem = ExtResource("2_3r3s1")
 spawnNode = NodePath("..")
+speedupRate = 0.05
 
 [node name="spawnPos" type="Node2D" parent="Timer"]
 

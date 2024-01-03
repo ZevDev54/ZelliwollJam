@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cph5kc1slacrp"]
+
+[ext_resource type="Script" path="res://TopDownSnakeMovement.gd" id="1_lx2xd"]
+[ext_resource type="PackedScene" uid="uid://dct5qyhkxm8di" path="res://snake_death.tscn" id="2_v3s04"]
+[ext_resource type="Texture2D" uid="uid://bmmpgqbmftsoi" path="res://Sprites/PNGs/test.png" id="3_oth0w"]
+[ext_resource type="SpriteFrames" uid="uid://cck2pesls7wi4" path="res://Sprites/GIFs/Mouse.gif" id="4_b6hn0"]
+[ext_resource type="Script" path="res://SnakeAnimationController.gd" id="5_jn8l8"]
+[ext_resource type="Script" path="res://PreyFood.gd" id="6_4crlq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t60sd"]
+radius = 9.0
+height = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qi37"]
+radius = 18.0
+height = 88.0
+
+[node name="Prey" type="RigidBody2D"]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_lx2xd")
+speed = 400
+deathFX = ExtResource("2_v3s04")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_t60sd")
+
+[node name="Test" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_oth0w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("4_b6hn0")
+animation = &"gif"
+script = ExtResource("5_jn8l8")
+
+[node name="SnackBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("6_4crlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnackBox"]
+position = Vector2(-3, 0)
+shape = SubResource("CapsuleShape2D_2qi37")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="SnackBox" to="." method="_hurtbox_entered"]

@@ -2,16 +2,17 @@ extends Timer
 
 @export var screenWidth : float = 5000
 var spawnTime : float = 1;
-@export var minSpawnTime := 1.0
-@export var maxSpawnTime := 2.0
+@export var minSpawnTime := 2.0
+@export var maxSpawnTime := 4.0
 
 @export var spawnItem : PackedScene;
 var loaded;
 
 @export var spawnNode : Node2D;
 
+@export var speedupRate := 0.005;
+
 func _ready():
-	print("Awake and ready for cactussy")
 	loaded = ResourceLoader.load(spawnItem.resource_path);
 
 func findPos():
@@ -19,7 +20,7 @@ func findPos():
 	return spawnNode.global_position + Vector2(randf_range(-screenWidth/2, screenWidth/2), 0)
 
 func _on_timer_timeout():
-	print("sex time! (cactussssssy)")
+
 	var spawned = spawnItem.instantiate()
 	add_child(spawned)
 	spawned.global_position = findPos();
@@ -27,3 +28,13 @@ func _on_timer_timeout():
 	print(spawned.name, spawned.global_position);
 	spawnTime = randf_range(minSpawnTime, maxSpawnTime)
 	wait_time = spawnTime
+
+	minSpawnTime -= speedupRate;
+	maxSpawnTime -= speedupRate;
+
+
+	minSpawnTime = clamp(minSpawnTime, 0.4, 1000)
+	maxSpawnTime = clamp(maxSpawnTime, 0.4, 1000)
+	print(minSpawnTime);
+
+
