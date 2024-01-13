@@ -21,6 +21,7 @@ lock_rotation = true
 script = ExtResource("1_7br8u")
 speed = 600
 deathFX = ExtResource("2_gr4eq")
+slowdownMultiplier = 3.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
