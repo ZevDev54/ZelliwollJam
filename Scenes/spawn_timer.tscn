@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://batqypx3np4ij"]
+
+[ext_resource type="Script" path="res://Scripts/CacSpawn.gd" id="1_4v8kr"]
+[ext_resource type="PackedScene" uid="uid://c1ck56jg0r1m" path="res://Scenes/hazard.tscn" id="2_bgihg"]
+
+[node name="Spawn Timer" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="." node_paths=PackedStringArray("spawnNode")]
+wait_time = 1.16
+autostart = true
+script = ExtResource("1_4v8kr")
+screenWidth = 1000.0
+minSpawnTime = 3.0
+spawnItem = ExtResource("2_bgihg")
+spawnNode = NodePath("..")
+speedupRate = 0.05
+
+[node name="spawnPos" type="Node2D" parent="Timer"]
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timer_timeout"]

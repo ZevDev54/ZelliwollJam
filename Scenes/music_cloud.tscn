@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://i1m1ctqjj6jj"]
+
+[ext_resource type="Texture2D" uid="uid://ch38qe2sjkpm6" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="1_byq1b"]
+[ext_resource type="Script" path="res://Scripts/music_cloud.gd" id="1_nhnam"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_be7lf"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_cnndo"]
+_data = [Vector2(0, 0.963138), 0.0, 0.0, 0, 0, Vector2(0.767327, 0.594518), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="music_cloud" type="Node2D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_nhnam")
+particles = NodePath("CPUParticles2D")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_be7lf")
+lifetime = 0.8
+explosiveness = 0.1
+texture = ExtResource("1_byq1b")
+spread = 180.0
+gravity = Vector2(0, -200)
+initial_velocity_min = 25.82
+initial_velocity_max = 106.32
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_cnndo")
+anim_speed_max = 1.0
+anim_offset_max = 1.0

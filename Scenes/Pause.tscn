@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv3rl1vblicym"]
+
+[ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_vqu2p"]
+[ext_resource type="Theme" path="res://PixelFont.tres" id="2_kdd6k"]
+[ext_resource type="PackedScene" uid="uid://8hkcxo7gk684" path="res://Scenes/volume.tscn" id="2_mixyd"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vqu2p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 279.0
+theme = ExtResource("2_kdd6k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_kdd6k")
+text = "QUIT
+"
+
+[node name="Master" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_mixyd")]
+layout_mode = 2
+busName = "Master"
+
+[node name="Music" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_mixyd")]
+layout_mode = 2
+busName = "Music"
+
+[node name="sfx" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_mixyd")]
+layout_mode = 2
+busName = "sfx"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press Escape to Resume
+
+"
+fit_content = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
