@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyk8fbuimjbce"]
+[gd_scene load_steps=7 format=3 uid="uid://dyk8fbuimjbce"]
 
 [ext_resource type="PackedScene" uid="uid://dhk1mtw0iri16" path="res://Scenes/ScrollingLevel.tscn" id="1_01qym"]
 [ext_resource type="PackedScene" uid="uid://dn1t5tklu0xaa" path="res://Scenes/score_display.tscn" id="1_ytqln"]
 [ext_resource type="PackedScene" uid="uid://d2f1oilabx72a" path="res://Scenes/call_pause.tscn" id="2_gjoxl"]
 [ext_resource type="AudioStream" uid="uid://d17u11pw6oovu" path="res://Audio/Music/ogg/GameMusic.ogg" id="4_du075"]
+[ext_resource type="Shader" path="res://Scenes/vignette.gdshader" id="5_hmy17"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ec7h"]
+shader = ExtResource("5_hmy17")
+shader_parameter/alpha = 0.33
+shader_parameter/inner_radius = 0.58
+shader_parameter/outer_radius = 1.64
 
 [node name="GameContainer" type="Node2D"]
+
+[node name="PostProcess" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="UI" type="Control" parent="."]
 visibility_layer = 3
@@ -27,22 +40,6 @@ offset_bottom = -302.0
 [node name="Call Pause" parent="UI" instance=ExtResource("2_gjoxl")]
 position = Vector2(-76, -58)
 
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Game" parent="." instance=ExtResource("1_01qym")]
 position = Vector2(-1, 1)
 
@@ -52,3 +49,14 @@ autoplay = true
 bus = &"Music"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+material = SubResource("ShaderMaterial_6ec7h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
