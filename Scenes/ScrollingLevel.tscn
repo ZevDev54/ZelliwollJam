@@ -1,8 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=16 format=3 uid="uid://dhk1mtw0iri16"]
 
-[ext_resource type="Shader" path="res://Scripts/scrolling.gdshader" id="2_ix804"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://Scenes/top_down_snake.tscn" id="3_4jjbe"]
-[ext_resource type="Texture2D" uid="uid://bv2gkvmherjjl" path="res://Sprites/PNGs/SandBackground.png" id="4_1jskn"]
 [ext_resource type="Script" path="res://Scripts/speedmanager.gd" id="4_o0uxn"]
 [ext_resource type="PackedScene" uid="uid://betofd2qmadse" path="res://Scenes/flutist.tscn" id="4_tpk63"]
 [ext_resource type="PackedScene" uid="uid://batqypx3np4ij" path="res://Scenes/spawn_timer.tscn" id="6_4rnw5"]
@@ -14,11 +12,8 @@
 [ext_resource type="Theme" path="res://PixelFont.tres" id="11_nlfso"]
 [ext_resource type="Script" path="res://Scripts/RestartScene.gd" id="12_wmwtp"]
 [ext_resource type="StyleBox" path="res://transparent.tres" id="13_e4x8k"]
+[ext_resource type="PackedScene" uid="uid://bvhv8tmoj4akh" path="res://sand_manager.tscn" id="14_dcwi3"]
 [ext_resource type="PackedScene" uid="uid://brxn6yubds643" path="res://Scenes/snake_boundary_pusher.tscn" id="15_c1al7"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
-shader = ExtResource("2_ix804")
-shader_parameter/motion = Vector2(0, -0.3)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_drlgu"]
 
@@ -30,30 +25,6 @@ texture_filter = 1
 [node name="GameSpeedManager" type="Node" parent="."]
 script = ExtResource("4_o0uxn")
 speed = 300.0
-
-[node name="SandScaler" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -2337.0
-offset_top = -1539.0
-offset_right = -2297.0
-offset_bottom = -1499.0
-scale = Vector2(1.27, 1.27)
-
-[node name="TextureRect" type="TextureRect" parent="SandScaler"]
-z_index = -10
-texture_repeat = 2
-material = SubResource("ShaderMaterial_asdbn")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 4784.0
-offset_bottom = 3013.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_1jskn")
-stretch_mode = 1
 
 [node name="Test" type="Sprite2D" parent="."]
 position = Vector2(-68, -37)
@@ -87,6 +58,9 @@ loseScreen = NodePath("../Lose")
 
 [node name="PreySpanwer" parent="." instance=ExtResource("9_h6dr6")]
 position = Vector2(-4, -432)
+
+[node name="spawnPos" parent="PreySpanwer/Timer" index="0"]
+position = Vector2(0, -451)
 
 [node name="Snake Timer" parent="." instance=ExtResource("6_4rnw5")]
 position = Vector2(-2, -482)
@@ -123,7 +97,7 @@ theme_override_styles/hover = ExtResource("13_e4x8k")
 theme_override_styles/pressed = ExtResource("13_e4x8k")
 text = "RESTART"
 script = ExtResource("12_wmwtp")
-playScene = "res://game_container.tscn"
+playScene = "res://Scenes/game_container.tscn"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Lose"]
 position = Vector2(-27, 173)
@@ -146,7 +120,7 @@ theme_override_styles/pressed = ExtResource("13_e4x8k")
 text = "QUIT
 "
 script = ExtResource("12_wmwtp")
-playScene = "res://main_menu.tscn"
+playScene = "res://Scenes/main_menu.tscn"
 
 [node name="SnakeBoundaryPusher4" parent="." instance=ExtResource("15_c1al7")]
 position = Vector2(-699, -1)
@@ -184,9 +158,14 @@ position = Vector2(4, 148)
 scale = Vector2(68.4588, 16.3992)
 pushVector = Vector2(0, -1000)
 
+[node name="SandMan(ager)" parent="." instance=ExtResource("14_dcwi3")]
+z_index = -10
+position = Vector2(-55, -1126)
+
 [connection signal="button_down" from="Lose/Sprite2D/Restart" to="Lose/Sprite2D/Restart" method="restartScene"]
 [connection signal="button_down" from="Lose/Sprite2D2/Quit" to="Lose/Sprite2D2/Quit" method="restartScene"]
 
+[editable path="PreySpanwer"]
 [editable path="SnakeBoundaryPusher4"]
 [editable path="SnakeBoundaryPusher3"]
 [editable path="SnakeBoundaryPusher2"]

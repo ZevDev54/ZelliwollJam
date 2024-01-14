@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvhv8tmoj4akh"]
+
+[ext_resource type="Script" path="res://SandManager.gd" id="1_jktkg"]
+[ext_resource type="PackedScene" uid="uid://djq8smc4br1gx" path="res://Scenes/sand_sheet.tscn" id="2_ifxdc"]
+
+[node name="SandMan(ager)" type="Node2D" node_paths=PackedStringArray("sandParent", "resetSandPoint")]
+position = Vector2(607, -542)
+script = ExtResource("1_jktkg")
+sandParent = NodePath("SandParent")
+resetSandPoint = NodePath("SandResetPoint")
+
+[node name="SandParent" type="Node2D" parent="."]
+
+[node name="SandSheet2" parent="SandParent" instance=ExtResource("2_ifxdc")]
+position = Vector2(0, 1698)
+
+[node name="SandSheet" parent="SandParent" instance=ExtResource("2_ifxdc")]
+position = Vector2(0, 842)
+
+[node name="SandSheet3" parent="SandParent" instance=ExtResource("2_ifxdc")]
+position = Vector2(0, 0)
+
+[node name="SandResetPoint" type="Node2D" parent="."]
+position = Vector2(5, 1973)

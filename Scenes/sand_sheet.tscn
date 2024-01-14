@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://djq8smc4br1gx"]
+
+[ext_resource type="Texture2D" uid="uid://bv2gkvmherjjl" path="res://Sprites/PNGs/SandBackground.png" id="1_58nxb"]
+
+[node name="SandSheet" type="Node2D"]
+position = Vector2(589, 317)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -652.0
+offset_top = -401.0
+offset_right = 738.0
+offset_bottom = 461.0
+texture = ExtResource("1_58nxb")
+stretch_mode = 1

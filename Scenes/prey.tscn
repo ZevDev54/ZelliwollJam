@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtlojth3mbra7"]
+[gd_scene load_steps=7 format=3 uid="uid://dtlojth3mbra7"]
 
 [ext_resource type="Script" path="res://Scripts/hazardmovement.gd" id="1_b5fs7"]
+[ext_resource type="SpriteFrames" uid="uid://kdit1rt6abol" path="res://Sprites/GIFs/Pig.gif" id="2_shagy"]
+[ext_resource type="Script" path="res://Scripts/RandomGifChooser.gd" id="3_pev6x"]
 [ext_resource type="SpriteFrames" uid="uid://cck2pesls7wi4" path="res://Sprites/GIFs/Mouse.gif" id="4_ips0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iy5jc"]
@@ -29,4 +31,8 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("4_ips0d")
 animation = &"gif"
-frame_progress = 0.633991
+autoplay = "gif"
+frame_progress = 0.855385
+speed_scale = 6.0
+script = ExtResource("3_pev6x")
+spriteframesList = Array[SpriteFrames]([ExtResource("4_ips0d"), ExtResource("2_shagy")])
