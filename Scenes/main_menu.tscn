@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://betofd2qmadse" path="res://Scenes/flutist.tscn" id="6_4377v"]
 [ext_resource type="Texture2D" uid="uid://bysnmi80yfogd" path="res://Sprites/UI/Slider.png" id="7_si4s5"]
 [ext_resource type="StyleBox" path="res://sliderback.tres" id="8_rdj7o"]
-[ext_resource type="AudioStream" uid="uid://ceiiqfuw1hgsj" path="res://Audio/Music/MenuMusic.wav" id="9_qqloe"]
+[ext_resource type="AudioStream" uid="uid://blxevtcq5i63x" path="res://Audio/Music/ogg/MenuMusic.ogg" id="9_qqloe"]
 [ext_resource type="StyleBox" path="res://transparent.tres" id="9_yxkdg"]
 
 [node name="Main Menu" type="Control"]

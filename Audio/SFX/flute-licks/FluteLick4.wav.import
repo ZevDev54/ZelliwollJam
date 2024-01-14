@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6y22q7yivpb8"
-path="res://.godot/imported/FluteLick4.wav-7d678b470161f88c3930cd9e27e856cd.sample"
+path="res://.godot/imported/FluteLick4.wav-05bdd2106c113d53cf0f36073fb23d99.sample"
 
 [deps]
 
-source_file="res://Audio/Music/FluteLick4.wav"
-dest_files=["res://.godot/imported/FluteLick4.wav-7d678b470161f88c3930cd9e27e856cd.sample"]
+source_file="res://Audio/SFX/flute-licks/FluteLick4.wav"
+dest_files=["res://.godot/imported/FluteLick4.wav-05bdd2106c113d53cf0f36073fb23d99.sample"]
 
 [params]
 

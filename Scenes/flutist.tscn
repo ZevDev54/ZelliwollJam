@@ -5,10 +5,10 @@
 [ext_resource type="SpriteFrames" uid="uid://ba48w0tojeal8" path="res://Sprites/GIFs/SnakeCharmerPlay.gif" id="3_xqm8c"]
 [ext_resource type="Texture2D" uid="uid://ch38qe2sjkpm6" path="res://Sprites/PNGs/MusicNotes-Sheet.png" id="4_4shb5"]
 [ext_resource type="Script" path="res://Scripts/PlayAndRandomizeTrack.gd" id="4_vs2le"]
-[ext_resource type="AudioStream" uid="uid://vbc3cdj36uvx" path="res://Audio/Music/FluteLick1.wav" id="5_cbspr"]
-[ext_resource type="AudioStream" uid="uid://1lkavahbqxc3" path="res://Audio/Music/FluteLick2.wav" id="7_t3gpu"]
-[ext_resource type="AudioStream" uid="uid://csdvba1hxj0bj" path="res://Audio/Music/FluteLick3.wav" id="8_h4wv8"]
-[ext_resource type="AudioStream" uid="uid://b6y22q7yivpb8" path="res://Audio/Music/FluteLick4.wav" id="9_2jhlj"]
+[ext_resource type="AudioStream" uid="uid://vbc3cdj36uvx" path="res://Audio/SFX/flute-licks/FluteLick1.wav" id="5_cbspr"]
+[ext_resource type="AudioStream" uid="uid://1lkavahbqxc3" path="res://Audio/SFX/flute-licks/FluteLick2.wav" id="7_t3gpu"]
+[ext_resource type="AudioStream" uid="uid://csdvba1hxj0bj" path="res://Audio/SFX/flute-licks/FluteLick3.wav" id="8_h4wv8"]
+[ext_resource type="AudioStream" uid="uid://b6y22q7yivpb8" path="res://Audio/SFX/flute-licks/FluteLick4.wav" id="9_2jhlj"]
 
 [sub_resource type="Animation" id="Animation_olpfj"]
 resource_name = "Idle"
@@ -164,7 +164,6 @@ scale = Vector2(1, 1.00456)
 
 [node name="ScaleRig" type="Node2D" parent="."]
 position = Vector2(1201, 640)
-scale = Vector2(0.985, 1)
 
 [node name="ANimatedSnakeCharmer" type="AnimatedSprite2D" parent="ScaleRig"]
 texture_filter = 1
