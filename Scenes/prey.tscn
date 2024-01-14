@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtlojth3mbra7"]
 
-[ext_resource type="Script" path="res://Scripts/hazardmovement.gd" id="1_b5fs7"]
+[ext_resource type="Script" path="res://Scenes/PreyMovement.gd" id="1_da3wl"]
 [ext_resource type="SpriteFrames" uid="uid://kdit1rt6abol" path="res://Sprites/GIFs/Pig.gif" id="2_shagy"]
 [ext_resource type="Script" path="res://Scripts/RandomGifChooser.gd" id="3_pev6x"]
 [ext_resource type="SpriteFrames" uid="uid://cck2pesls7wi4" path="res://Sprites/GIFs/Mouse.gif" id="4_ips0d"]
@@ -14,7 +14,8 @@ radius = 33.0
 [node name="ActualPrey" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_b5fs7")
+script = ExtResource("1_da3wl")
+movementSpeed = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iy5jc")

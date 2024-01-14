@@ -24,7 +24,7 @@ texture_filter = 1
 
 [node name="GameSpeedManager" type="Node" parent="."]
 script = ExtResource("4_o0uxn")
-speed = 300.0
+speed = 400.0
 
 [node name="Test" type="Sprite2D" parent="."]
 position = Vector2(-68, -37)

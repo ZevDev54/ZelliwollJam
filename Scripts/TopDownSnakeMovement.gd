@@ -11,6 +11,8 @@ extends RigidBody2D
 
 @export var maxSlowPower = 0.9;
 
+@export var slideCounterForcePercent = 0.5;
+
 var boundaryPushForce : Vector2;
 
 # Called when the node enters the scene tree for the first time.
@@ -41,22 +43,38 @@ func _physics_process(delta):
 
 func moveTowardsMouse(delta, allowSlowdown):
 	var mouse_pos = get_global_mouse_position()
-	var velocity_vector = mouse_pos - global_position;
-	var distance = velocity_vector.length();
 
-	#Get signed distance to the cursor. If within slowdownDistance radius, the value is positive.
-	var signedDistance = slowdownDistance - distance;
+	var mouseDifference = mouse_pos - global_position;
+	var mouseDirection = mouseDifference.normalized();
+
+	var mouseDistance = mouseDifference.length();
+
+	#Get signed distance to the cursor. If within slowdownDistance radius, 
+	#i.e the value is positive, and applies a braking force through slowdown() function.
+	var signedDistance = slowdownDistance - mouseDistance;
 	if(signedDistance > 0):
 		#Get the 0-1 distance percentage.
-		var distAsPercent = slowdownDistance / distance;
+		var distAsPercent = slowdownDistance / mouseDistance;
 		distAsPercent = clamp(distAsPercent, 0, maxSlowPower);
 		#Add slowdown force- stronger the closer to the cursor.
 		if(allowSlowdown):
 			slowdown(delta, distAsPercent * slowdownMultiplier);
 
+	#To make the snakes change direction more snappily,
+	#take the negative component of the dot product between 
+	#the current velocity-direction and the mouse direction, and multiply speed accordingly.
+	var directionDotProduct = linear_velocity.dot(mouseDirection);
+	var positiveDotProduct:float = clamp(-directionDotProduct, 0, 1)
+	var counterforce = (1+positiveDotProduct*slideCounterForcePercent);
 
-	var normalized_velocity = velocity_vector.normalized()
-	apply_central_force(normalized_velocity * speed); 
+	print("direction dot product: ",directionDotProduct, " Positive only dot product: ",positiveDotProduct," slide counterforce: ",counterforce);
+	
+
+	apply_central_force(mouseDirection * counterforce * speed); 
+
+
+
+
 
 
 
