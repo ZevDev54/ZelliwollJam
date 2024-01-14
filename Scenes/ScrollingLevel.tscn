@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhk1mtw0iri16"]
+[gd_scene load_steps=18 format=3 uid="uid://dhk1mtw0iri16"]
 
 [ext_resource type="Shader" path="res://Scripts/scrolling.gdshader" id="2_ix804"]
 [ext_resource type="PackedScene" uid="uid://b31q3xik3sgc3" path="res://Scenes/top_down_snake.tscn" id="3_4jjbe"]
@@ -14,6 +14,7 @@
 [ext_resource type="Theme" path="res://PixelFont.tres" id="11_nlfso"]
 [ext_resource type="Script" path="res://Scripts/RestartScene.gd" id="12_wmwtp"]
 [ext_resource type="StyleBox" path="res://transparent.tres" id="13_e4x8k"]
+[ext_resource type="PackedScene" uid="uid://brxn6yubds643" path="res://Scenes/snake_boundary_pusher.tscn" id="15_c1al7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asdbn"]
 shader = ExtResource("2_ix804")
@@ -147,5 +148,46 @@ text = "QUIT
 script = ExtResource("12_wmwtp")
 playScene = "res://main_menu.tscn"
 
+[node name="SnakeBoundaryPusher4" parent="." instance=ExtResource("15_c1al7")]
+position = Vector2(-699, -1)
+rotation = 4.71238
+scale = Vector2(0.64949, 0.833691)
+
+[node name="Area2D" parent="SnakeBoundaryPusher4" index="0"]
+position = Vector2(-3.0782, -133.143)
+scale = Vector2(101.9, 19.8409)
+pushVector = Vector2(1000, 0)
+
+[node name="SnakeBoundaryPusher3" parent="." instance=ExtResource("15_c1al7")]
+position = Vector2(709, 4)
+rotation = 1.57079
+scale = Vector2(0.67168, 0.996697)
+
+[node name="Area2D" parent="SnakeBoundaryPusher3" index="0"]
+position = Vector2(4.46684, -129.428)
+scale = Vector2(103.297, 19.7675)
+pushVector = Vector2(-1000, 0)
+
+[node name="SnakeBoundaryPusher2" parent="." instance=ExtResource("15_c1al7")]
+position = Vector2(5, -439)
+
+[node name="Area2D" parent="SnakeBoundaryPusher2" index="0"]
+position = Vector2(5, -74)
+scale = Vector2(68.4588, 15.4392)
+pushVector = Vector2(0, 1000)
+
+[node name="SnakeBoundaryPusher" parent="." instance=ExtResource("15_c1al7")]
+position = Vector2(-1, 371)
+
+[node name="Area2D" parent="SnakeBoundaryPusher" index="0"]
+position = Vector2(4, 148)
+scale = Vector2(68.4588, 16.3992)
+pushVector = Vector2(0, -1000)
+
 [connection signal="button_down" from="Lose/Sprite2D/Restart" to="Lose/Sprite2D/Restart" method="restartScene"]
 [connection signal="button_down" from="Lose/Sprite2D2/Quit" to="Lose/Sprite2D2/Quit" method="restartScene"]
+
+[editable path="SnakeBoundaryPusher4"]
+[editable path="SnakeBoundaryPusher3"]
+[editable path="SnakeBoundaryPusher2"]
+[editable path="SnakeBoundaryPusher"]

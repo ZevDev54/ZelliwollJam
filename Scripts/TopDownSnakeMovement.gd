@@ -1,3 +1,4 @@
+class_name TopDownSnakeMovement;
 extends RigidBody2D
 
 @export var speed := 100;
@@ -10,18 +11,35 @@ extends RigidBody2D
 
 @export var maxSlowPower = 0.9;
 
+var boundaryPushForce : Vector2;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	var allowSlowdown := true;
+
+	if(boundaryPushForce != Vector2.ZERO):
+		apply_impulse(boundaryPushForce*delta);
+		print("Actualized push! Push vec is",boundaryPushForce)
+		boundaryPushForce = Vector2.ZERO;
+		allowSlowdown = false;
+		
+
 	#Is the player using the flute?
 	if !Input.is_action_pressed("leftclick"):
 		#If player is not using flute, apply slow down to brake the snake's moevement.
-		slowdown(delta, slowdownMultiplier)
+		if(allowSlowdown):
+			slowdown(delta, slowdownMultiplier)
 		#Return- do nothing else, skips the move towards cursor code. A bit cleaner than if/else, avoid nesting
 		return;
 
+	moveTowardsMouse(delta, allowSlowdown);
+	
+
+
+func moveTowardsMouse(delta, allowSlowdown):
 	var mouse_pos = get_global_mouse_position()
 	var velocity_vector = mouse_pos - global_position;
 	var distance = velocity_vector.length();
@@ -33,16 +51,27 @@ func _physics_process(delta):
 		var distAsPercent = slowdownDistance / distance;
 		distAsPercent = clamp(distAsPercent, 0, maxSlowPower);
 		#Add slowdown force- stronger the closer to the cursor.
-		slowdown(delta, distAsPercent * slowdownMultiplier);
+		if(allowSlowdown):
+			slowdown(delta, distAsPercent * slowdownMultiplier);
 
 
 	var normalized_velocity = velocity_vector.normalized()
 	apply_central_force(normalized_velocity * speed); 
 
+
+
 func slowdown(delta:float, amount:float):
 	var velocityCopy = linear_velocity;
 	var slowdownVector : Vector2 = velocityCopy.lerp(Vector2.ZERO, delta); 
 	apply_central_force(-slowdownVector * amount)
+
+
+func boundaryPush(pushForce : Vector2):
+	boundaryPushForce = pushForce;
+	print("Set push force variable for later push handling..")
+
+
+
 
 #only called when contacts hazard layer items.
 func _hurtbox_entered(area:Area2D):
